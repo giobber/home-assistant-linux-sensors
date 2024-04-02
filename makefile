@@ -37,4 +37,4 @@ requirements:
 .PHONY: serve
 serve:
 	@echo -e $(bold)Run development server$(sgr0)
-	$(python) -m app
+	$(VENV)/bin/uvicorn app.api:api --reload
