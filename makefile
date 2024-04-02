@@ -31,7 +31,8 @@ update:
 
 .PHONY: requirements
 requirements: 
-	@$(python) -m piptools compile -vU --strip-extras --resolver backtracking --output-file requirements.txt pyproject.toml
+	@$(python) -m piptools compile -vU --extra dev --extra test \
+			   --resolver backtracking --output-file requirements.txt pyproject.toml
 
 .PHONY: serve
 serve:
