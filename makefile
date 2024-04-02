@@ -33,7 +33,6 @@ update:
 requirements: 
 	@$(python) -m piptools compile -vU --strip-extras --resolver backtracking --output-file requirements.txt pyproject.toml
 
-
 .PHONY: serve
 serve:
 	@echo -e $(bold)Run development server$(sgr0)

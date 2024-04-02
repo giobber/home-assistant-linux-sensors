@@ -1,1 +1,1 @@
-# home-assistant-linux-sensors
+# A Web API to expose data for a Linux Machine
