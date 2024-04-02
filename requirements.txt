@@ -23,6 +23,8 @@ httptools==0.6.1
     # via uvicorn
 idna==3.6
     # via anyio
+psutil==5.9.8
+    # via home-assistant-linux-sensors (pyproject.toml)
 pydantic==2.6.4
     # via fastapi
 pydantic-core==2.16.3
