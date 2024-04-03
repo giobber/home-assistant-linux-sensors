@@ -62,7 +62,9 @@ pyasn1==0.6.0
 pycparser==2.22
     # via cffi
 pydantic==2.6.4
-    # via fastapi
+    # via
+    #   fastapi
+    #   home-assistant-linux-sensors (pyproject.toml)
 pydantic-core==2.16.3
     # via pydantic
 pytest==8.1.1
