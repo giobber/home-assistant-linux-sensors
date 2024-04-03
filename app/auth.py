@@ -7,7 +7,7 @@ from fastapi.security import HTTPBasic, HTTPBasicCredentials
 
 from . import settings
 
-api = APIRouter()
+router = APIRouter()
 
 security = HTTPBasic()
 
@@ -43,12 +43,12 @@ def check_credentials(credentials: Credentials):
 Authenticate = Annotated[str, Depends(check_credentials)]
 
 
-@api.get("/user")
+@router.get("/user")
 def get_user(username: Authenticate):
     return username
 
 
-@api.get("/logout")
+@router.get("/logout")
 def logout():
     raise HTTPException(
         status_code=401, detail="Logged out", headers={"WWW-Authenticate": "Basic"}

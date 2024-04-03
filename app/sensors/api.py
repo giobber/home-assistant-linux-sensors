@@ -2,16 +2,16 @@ import psutil
 from fastapi import APIRouter
 from fastapi.exceptions import HTTPException
 
-api = APIRouter()
+router = APIRouter()
 
 
-@api.get("/cpu")
+@router.get("/cpu")
 def list_available_cpu_devices():
     return list(psutil.sensors_temperatures().keys())
 
 
-@api.get("/cpu/{device}")
-@api.get("/cpu/{device}/{core}")
+@router.get("/cpu/{device}")
+@router.get("/cpu/{device}/{core}")
 def read_cpu_temperature(device, core: int = None):
     cpu_temp = psutil.sensors_temperatures()[device]
     if core is None:
