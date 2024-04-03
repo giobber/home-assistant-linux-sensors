@@ -5,6 +5,8 @@ requires-python = ">=3.11"
 dependencies = [
     "fastapi",
     "psutil",
+    "python-jose[cryptography]",
+    "passlib[bcrypt]",
     "python-multipart",
     "uvicorn[standard]",
 ]
