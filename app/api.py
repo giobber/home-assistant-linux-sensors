@@ -1,12 +1,16 @@
+from typing import Annotated
+
 import psutil
-from fastapi import FastAPI
+from fastapi import Depends, FastAPI
 from fastapi.exceptions import HTTPException
+
+from .auth import oauth2_scheme
 
 api = FastAPI()
 
 
 @api.get("/cpu")
-def list_available_cpu_devices():
+def list_available_cpu_devices(token: Annotated[str, Depends(oauth2_scheme)]):
     return list(psutil.sensors_temperatures().keys())
 
 
