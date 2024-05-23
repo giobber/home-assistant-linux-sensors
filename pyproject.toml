@@ -3,6 +3,7 @@ name = "home-assistant-linux-sensors"
 version = "0.0.0"
 requires-python = ">=3.11"
 dependencies = [
+    "typer",
     "fastapi",
     "psutil",
     "pydantic",
@@ -20,7 +21,7 @@ test = ["pytest"]
 requires = ["setuptools", "wheel"]
 
 [tool.setuptools.packages.find]
-include = ["app"]
+include = []
 
 [tool.isort]
 profile = "black"
